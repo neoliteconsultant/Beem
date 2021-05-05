@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+let mobileScrapper = require('./src/mobile_scrapper.js');
+mobileScrapper.scrapeData();

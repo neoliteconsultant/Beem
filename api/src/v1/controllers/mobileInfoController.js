@@ -1,11 +1,15 @@
 'use strict';
 const mncMccData = require('../../../data/mnc_mcc');
+// const constants =  require("../../constants/constants");
+const HTTP_BAD_REQUEST = 400;
 
 exports.index = function (req, res) {
+  res.set('Content-Type', 'application/json');
   res.send(mncMccData);
 }
 
 exports.getNetwork = function (req, res) {
+  res.set('Content-Type', 'application/json');
   let mcc = req.query.mcc;
   let mnc = req.query.mnc;
   let errorMessage = {};
@@ -21,6 +25,8 @@ exports.getNetwork = function (req, res) {
       success: false,
       message: "Mobile Network Codes (MNC)"
     };
+
+    res.status(HTTP_BAD_REQUEST);
     res.send(errorMessage);
   } else {
 
@@ -33,6 +39,7 @@ exports.getNetwork = function (req, res) {
 }
 
 exports.getNetworkByCountry = function (req, res) {
+  res.set('Content-Type', 'application/json');
   let mcc = req.query.mcc;
   let countryName = req.query.countryName;
   let errorMessage = {};
@@ -42,7 +49,8 @@ exports.getNetworkByCountry = function (req, res) {
       message: "Please provide either Mobile Country Codes (MCC) or countryName"
     };
 
-    res.send(JSON.stringify(errorMessage));
+    res.status(HTTP_BAD_REQUEST);
+    res.send(errorMessage);
   } else {
     let callBackFn = function (listItem) {
       return listItem.mcc === mcc;

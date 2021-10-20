@@ -15,9 +15,9 @@ Navigate to the project root in a command line and execute the following command
 
 1. Install dependencies
 
-  `
-  $ npm install
-  `
+    `
+    $ npm install
+    `
 
 2. Then execute the following command:
 
@@ -25,7 +25,7 @@ Navigate to the project root in a command line and execute the following command
     $ node app.js 
     `
 
- This will fire up Express JS, the server application used to serve Node JS.It has been set to run on port 3080
+    This will fire up Express JS, the server application used to serve Node JS.It has been set to run on port 3080
 
 
 3. Look up the network name and country by specifying mcc and mnc
@@ -44,7 +44,7 @@ Navigate to the project root in a command line and execute the following command
 ### Running tests
 To run tests navigate to the project root in a command line then execute:
 
-  `
-  $ npm test
-`
+    `
+    $ npm test
+    `
 

@@ -19,6 +19,7 @@ exports.getNetwork = function (req, res) {
       message: "Mobile Country Codes (MCC) is required"
     };
 
+    res.status(HTTP_BAD_REQUEST);
     res.send(errorMessage);
   } else if (!mnc) {
     errorMessage = {
